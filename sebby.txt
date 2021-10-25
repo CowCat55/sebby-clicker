@@ -72,8 +72,8 @@ Buildings
 	*TEMPLATE
 		on click:anim glow
  
-	*GamingChair|GamingChairs
-		name:GamingChair|GamingChairs
+	*Cage|Cages
+		name:Cage|Cage
 		desc:Not hacking.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
 		icon:icons[3,0]
 		cost:15 sebbies
