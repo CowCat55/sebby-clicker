@@ -1,5 +1,5 @@
 Let's make a game!
-	-sebby Clicker
+	-SebbyClicker
 	-by CowCat55
 	-created on 02/01/2014
 	-last updated on 03/01/2014
