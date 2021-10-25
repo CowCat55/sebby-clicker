@@ -72,9 +72,9 @@ Buildings
 	*TEMPLATE
 		on click:anim glow
  
-	*cage|cages
-		name:Rabbit cage|Rabbit cages
-		desc:A tiny little cage.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
+	*GamingChair|GamingChairs
+		name:Gaming Chair|Gaming Chairs
+		desc:Not hacking.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
 		icon:icons[3,0]
 		cost:15 sebbies
 		on tick:yield 0.1 sebby
@@ -155,7 +155,7 @@ Upgrades
 	//inspiration : http://rabbit.org/suggested-vegetables-and-fruits-for-a-rabbit-diet/
  
 	*GamingChair
-		name:Gaming Chair
+		name:GamingChair
 		desc:Totally not hacking.<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,1]
 		cost:100 sebbies
@@ -163,7 +163,7 @@ Upgrades
 		req:10 sebbies:earned
  
 	*RBBKeyboard
-		name:RBB Keyboard
+		name:RBBKeyboard
 		desc:The most important part of a gaming pc.<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,2]
 		cost:200 sebbies
