@@ -73,7 +73,7 @@ Buildings
 		on click:anim glow
  
 	*GamingChair|GamingChairs
-		name:Gaming Chair|Gaming Chairs
+		name:GamingChair|GamingChairs
 		desc:Not hacking.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
 		icon:icons[3,0]
 		cost:15 sebbies
