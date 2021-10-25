@@ -154,7 +154,7 @@ Upgrades
 	//food upgrades
 	//inspiration : http://rabbit.org/suggested-vegetables-and-fruits-for-a-rabbit-diet/
  
-	*Gaming Chair
+	*GamingChair
 		name:Gaming Chair
 		desc:Totally not hacking.<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,1]
@@ -162,7 +162,7 @@ Upgrades
 		passive:increase sebby yield of sebbyButton by 1
 		req:10 sebbies:earned
  
-	*RBB Keyboard
+	*RBBKeyboard
 		name:RBB Keyboard
 		desc:The most important part of a gaming pc.<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,2]
