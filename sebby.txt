@@ -1,0 +1,313 @@
+Let's make a game!
+	-sebby Clicker
+	-by CowCat55
+	-created on 02/01/2014
+	-last updated on 03/01/2014
+	-version 1
+
+Settings :
+	-prices increase by 115%
+	-selling gives back 50%
+	-resources are hidden by default
+	-clickables are hidden by default
+	-buildings are hidden by default
+	-upgrades are hidden by default
+	-show log
+	//-custom stylesheet : http://pastebin.com/raw.php?i=vWDguSvc
+	-background : https://download1652.mediafire.com/f2vcdz4qq8lg/9n9qb2yczt8o1tq/sebby.png
+	-text color : #fff
+	-fonts : Kavoon
+	//this bit is still a work in progress
+	-boxes : main (resources, clickables); store (upgrades, buildings); stats (achievements)
+
+Resources :
+	*skyblock coins
+	-named sebby|sebbys
+	-displayed as %a sebby%s
+	-visible
+
+Clickables :
+	*Makesebby
+	-gives 1 sebbys
+	-visible
+	-gains 10% per frycook
+	-named Make sebby
+	-picture : https://download1652.mediafire.com/f2vcdz4qq8lg/9n9qb2yczt8o1tq/sebby.png
+
+Buildings :
+	// fry cook -> sebby stand -> diner -> restaurant -> meat factory
+	*FryCook
+	-"A lazy, greasy patty-flipper.<br>Each fry cook adds <b>+10%</b> to manual sebby-making."
+	-costs 15 sebbys
+	-gives 0.1 sebbys
+	-named fry cook|fry cooks
+	-visible
+	-picture : http://s24.postimg.org/lqr4h4ew1/sebby_Cook.png
+
+	*sebbyStand
+	-"A small sebby outlet on the edge of town."
+	-costs 100 sebbys
+	-gives 0.5 sebbys
+	-named sebby stand|sebby stands
+	-picture : http://s29.postimg.org/xxof3pr3n/sebby_Stand.png
+
+	*Diner
+	-"Comes with a bar, ambience, and sassy waitresses."
+	-costs 500 sebbys
+	-gives 3 sebbys
+	-named diner|diners
+	-picture : http://s27.postimg.org/j4vrpdrvj/sebby_Diner.png
+
+	*Restaurant
+	-"A respectable building bustling with hungry customers."
+	-costs 3000 sebbys
+	-gives 15 sebbys
+	-named restaurant|restaurants
+
+	*MeatFactory
+	-"A large processing plant that churns out fresh patties from cows."
+	-costs 20000 sebbys
+	-gives 60 sebbys
+	-named meat factory|meat factories
+
+Upgrades :
+	*BuildingPermit1
+	-"Oh joy! You've sold enough sebbys to start building your own sebby stands!<br>Unlocks <b>sebby stands</b>."
+	-costs 100 sebbys
+	-unlocks at 100 sebbys, 1 frycook
+	-unlocks sebbystand
+	-named Building permit : sebby stand
+	*BuildingPermit2
+	-"With this permit, you can start building good old diners with nothing but sebbys on the menu.<br>Unlocks <b>diners</b>."
+	-costs 500 sebbys
+	-unlocks at 500 sebbys, 1 sebbystand
+	-unlocks diner
+	-named Building permit : diner
+	*BuildingPermit3
+	-"You've passed enough health inspections to earn this shiny new building permit, which lets you build restaurants!<br>Unlocks <b>restaurants</b>."
+	-costs 3000 sebbys
+	-unlocks at 3000 sebbys, 1 diner
+	-unlocks restaurant
+	-named Building permit : restaurant
+	*BuildingPermit4
+	-"It's time to take it to the next level. Don't settle for retail meat of dubious origin - get this permit and build your very own meat-processing plants!<br>Unlocks <b>meat factories</b>."
+	-costs 20000 sebbys
+	-unlocks at 20000 sebbys, 1 restaurant
+	-unlocks meatfactory
+	-named Building permit : meat factories
+
+	*KitchenSynergy
+	-"Each fry cook now helps you with making sebbys.<br><b>Clicking</b> generates <b>1 more sebby per fry cook</b>."
+	-costs 200 sebbys
+	-multiplies efficiency of Makesebby by 100% per frycook
+	-unlocks at 100 sebbys
+	-named Kitchen synergy
+
+	*HelpingHand
+	-"You get a friend to assist you in flipping sebbys.<br><b>Clicking</b> is <b>twice</b> as efficient.<br><b>Fry cooks</b> are <b>20%</b> more efficient."
+	-costs 200 sebbys
+	-multiplies efficiency of Makesebby by 200%
+	-multiplies efficiency of FryCook by 120%
+	-unlocks at 100 sebbys
+	-named Helping hand
+	*SteadyPace
+	-"After so much patty-flipping, you're starting to pick up speed!<br><b>Clicking</b> is <b>twice</b> as efficient.<br><b>Fry cooks</b> are <b>20%</b> more efficient."
+	-costs 2000 sebbys
+	-multiplies efficiency of Makesebby by 200%
+	-multiplies efficiency of FryCook by 120%
+	-unlocks at 1500 sebbys
+	-named Steady pace
+	*StreamlinedWorkflow
+	-"You've got it all worked out now, and making sebbys has become a second nature for you.<br><b>Clicking</b> is <b>twice</b> as efficient.<br><b>Fry cooks</b> are <b>20%</b> more efficient."
+	-costs 20000 sebbys
+	-multiplies efficiency of Makesebby by 200%
+	-multiplies efficiency of FryCook by 120%
+	-unlocks at 15000 sebbys
+	-named Streamlined workflow
+
+	*PremiumGradeSesameSeeds
+	-"You're not quite sure how sesame even grows, but those guys down the street seem to be pretty good at it.<br>sebby income <b>+5%</b>."
+	-costs 1000 sebbys
+	-multiplies income of sebbys by 105%
+	-unlocks at 500 sebbys
+	-named Premium-grade sesame seeds
+	*FluffierBuns
+	-"Those are the juiciest buns you've ever squeezed. You just might take one home as a pillow.<br>sebby income <b>+5%</b>."
+	-costs 1000 sebbys
+	-multiplies income of sebbys by 105%
+	-unlocks at 500 sebbys
+	-named Fluffier buns
+	*FinerPickleSlices
+	-"These are kind of a big dill.<br>sebby income <b>+5%</b>."
+	-costs 1000 sebbys
+	-multiplies income of sebbys by 105%
+	-unlocks at 500 sebbys
+	-named Finer pickle slices
+
+	*SuperSecretSauce
+	-"You're not even sure what's in it!<br>sebby income <b>+10%</b>."
+	-costs 100000 sebbys
+	-multiplies income of sebbys by 110%
+	-unlocks at 10000 sebbys
+	-named Super-secret sauce
+	*AllBeefPatties
+	-"You're kind of sad to see the roadkill-based family recipe go, but you've got the health inspectors on your back. So long, raccoons!<br>sebby income <b>+10%</b>."
+	-costs 100000 sebbys
+	-multiplies income of sebbys by 110%
+	-unlocks at 10000 sebbys
+	-named All-beef patties
+	*ExtraSoggyCheese
+	-"It's barely even cheese at all, but by golly is it the soggiest.<br>sebby income <b>+10%</b>."
+	-costs 100000 sebbys
+	-multiplies income of sebbys by 110%
+	-unlocks at 10000 sebbys
+	-named Extra-soggy cheese
+
+	*MagicTomatoes
+	-"Not actually magic, although they do glow with an ominous green light.<br>sebby income <b>+15%</b>."
+	-costs 10000000 sebbys
+	-multiplies income of sebbys by 115%
+	-unlocks at 1000000 sebbys
+	-named Magic tomatoes
+	*PrizeWinningOnions
+	-"They're so gorgeous you just might cry.<br>sebby income <b>+15%</b>."
+	-costs 10000000 sebbys
+	-multiplies income of sebbys by 115%
+	-unlocks at 1000000 sebbys
+	-named Prize-winning onions
+	*WholeLettuceLeaves
+	-"It's time to bring out the big guns - no more shall your sebbys be garnished with measly diced lettuce!<br>sebby income <b>+15%</b>."
+	-costs 10000000 sebbys
+	-multiplies income of sebbys by 115%
+	-unlocks at 1000000 sebbys
+	-named Whole lettuce leaves
+
+	*SteelSpatulas
+	-"No more wonky plastic spatulas that melt on the grill!<br><b>Fry cooks</b> are <b>50%</b> more efficient."
+	-costs 200 sebbys
+	-multiplies efficiency of FryCook by 150%
+	-unlocks at 1 FryCook
+	-named Straighter spatulas
+	*NeaterUniforms
+	-"Boost employee morale with these snazzy suits!<br><b>Fry cooks</b> are <b>twice</b> as efficient."
+	-costs 2000 sebbys
+	-multiplies efficiency of FryCook by 200%
+	-unlocks at 10 FryCook
+	-named Neater uniforms
+	*EmployeeTrainingVideos
+	-"Help get the newbies up to speed with these tapes full of corporate rap and sick rhymes.<br><b>Fry cooks</b> are <b>twice</b> as efficient."
+	-costs 20000 sebbys
+	-multiplies efficiency of FryCook by 200%
+	-unlocks at 50 FryCook
+	-named Employee training videos
+
+	*PaperNapkins
+	-"Now your customers can wipe off that ketchup sauce dribbling from their chins!<br><b>sebby stands</b> are <b>150%</b> more efficient."
+	-costs 3000 sebbys
+	-multiplies efficiency of sebbyStand by 150%
+	-unlocks at 1 sebbyStand
+	-named Paper napkins
+	*SodaDispensers
+	-"Make extra profit with these fizzy, sugary thirst mutilators.<br><b>sebby stands</b> are <b>twice</b> as efficient."
+	-costs 30000 sebbys
+	-multiplies efficiency of sebbyStand by 200%
+	-unlocks at 10 sebbyStand
+	-named Soda dispensers
+	*Restrooms
+	-"It's really just a port-a-potty, but when you gotta go, etc.<br><b>sebby stands</b> are <b>twice</b> as efficient."
+	-costs 300000 sebbys
+	-multiplies efficiency of sebbyStand by 200%
+	-unlocks at 50 sebbyStand
+	-named Restrooms
+
+	*PrintedMenus
+	-"Charming menus with a glossy finish, with stylish Comic Sans headers.<br><b>Diners</b> are <b>150%</b> more efficient."
+	-costs 20000 sebbys
+	-multiplies efficiency of Diner by 150%
+	-unlocks at 1 Diner
+	-named Printed menus
+	*TallerBarstools
+	-"Accomodates even the smallest of guests, or those with cripplingly low self-esteem.<br><b>Diners</b> are <b>twice</b> as efficient."
+	-costs 200000 sebbys
+	-multiplies efficiency of Diner by 200%
+	-unlocks at 10 Diner
+	-named Taller barstools
+	*NeonSigns
+	-"Advertise your diners the way they were meant to be with these wacky flashing abominations!<br><b>Diners</b> are <b>twice</b> as efficient."
+	-costs 2000000 sebbys
+	-multiplies efficiency of Diner by 200%
+	-unlocks at 50 Diner
+	-named Neon signs
+
+	*DimLights
+	-"Sometimes, you can both bring a classy mood and conceal the decaying wallpaper by simply dimming down the lights.<br><b>Restaurants</b> are <b>150%</b> more efficient."
+	-costs 100000 sebbys
+	-multiplies efficiency of Restaurant by 150%
+	-unlocks at 1 Restaurant
+	-named Dim lights
+	*FlatScreenTVs
+	-"Why waste your time in restaurants if you're going to miss the latest sports event? These slick new plasma screens might help remedy this situation.<br><b>Restaurants</b> are <b>twice</b> as efficient."
+	-costs 1000000 sebbys
+	-multiplies efficiency of Restaurant by 200%
+	-unlocks at 10 Restaurant
+	-named Flat-screen TVs
+	*PaidCritics
+	-"Food critics love your sebbys! (At least, they do after some serious compensation.)<br><b>Restaurants</b> are <b>twice</b> as efficient."
+	-costs 10000000 sebbys
+	-multiplies efficiency of Restaurant by 200%
+	-unlocks at 50 Restaurant
+	-named Paid critics
+
+	*Guardrails
+	-"Sometimes, the simplest improvements are the best! These guardrails will prevent your factory workers from occasionally ending up in the patties.<br><b>Meat factories</b> are <b>150%</b> more efficient."
+	-costs 1000000 sebbys
+	-multiplies efficiency of MeatFactory by 150%
+	-unlocks at 1 MeatFactory
+	-named Guardrails
+	*BovinePulverisators
+	-"These turn a live cow into pink mush in 6 seconds flat!<br><b>Meat factories</b> are <b>twice</b> as efficient."
+	-costs 10000000 sebbys
+	-multiplies efficiency of MeatFactory by 200%
+	-unlocks at 10 MeatFactory
+	-named Bovine pulverisators
+	*BeefEnlargers
+	-"Enlarge your cattle with these risk-free anabolics TODAY!<br><b>Meat factories</b> are <b>twice</b> as efficient."
+	-costs 100000000 sebbys
+	-multiplies efficiency of MeatFactory by 200%
+	-unlocks at 50 MeatFactory
+	-named Beef enlargers
+
+Achievements :
+	*LetsGetCookin
+	-"Cook <b>1</b> sebby."
+	-unlocks at 1 sebbys
+	-named Let's get cookin'
+	*Peckish
+	-"Cook <b>100</b> sebbys."
+	-unlocks at 100 sebbys
+	*Hungry
+	-"Cook <b>10000</b> sebbys."
+	-unlocks at 10000 sebbys
+	*Ravenous
+	-"Cook <b>1000000</b> sebbys."
+	-unlocks at 1000000 sebbys
+	*Unstoppable
+	-"Cook <b>100000000</b> sebbys."
+	-unlocks at 100000000 sebbys
+	*FastFoodTycoon
+	-"Cook <b>10000000000</b> sebbys."
+	-unlocks at 10000000000 sebbys
+	-named Fast-food tycoon
+
+	*HiredHelp
+	-"Hire <b>1</b> fry cook."
+	-unlocks at 1 frycook
+	-named Hired help
+	*Teamwork
+	-"Hire <b>50</b> fry cooks."
+	-unlocks at 50 frycook
+	-named Teamwork
+	*UnderpaidBattalion
+	-"Hire <b>100</b> fry cooks."
+	-unlocks at 100 frycook
+	-named Underpaid battalion
