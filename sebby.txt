@@ -1,313 +1,430 @@
 Let's make a game!
-	-SebbyClicker
-	-by CowCat55
-	-created on 02/01/2014
-	-last updated on 03/01/2014
-	-version 1
-
-Settings :
-	-prices increase by 115%
-	-selling gives back 50%
-	-resources are hidden by default
-	-clickables are hidden by default
-	-buildings are hidden by default
-	-upgrades are hidden by default
-	-show log
-	//-custom stylesheet : http://pastebin.com/raw.php?i=vWDguSvc
-	-background : https://download1652.mediafire.com/f2vcdz4qq8lg/9n9qb2yczt8o1tq/sebby.png
-	-text color : #fff
-	-fonts : Kavoon
-	//this bit is still a work in progress
-	-boxes : main (resources, clickables); store (upgrades, buildings); stats (achievements)
-
-Resources :
-	*skyblock coins
-	-named sebby|sebbys
-	-displayed as %a sebby%s
-	-visible
-
-Clickables :
-	*Makesebby
-	-gives 1 sebbys
-	-visible
-	-gains 10% per frycook
-	-named Make sebby
-	-picture : https://download1652.mediafire.com/f2vcdz4qq8lg/9n9qb2yczt8o1tq/sebby.png
-
-Buildings :
-	// fry cook -> sebby stand -> diner -> restaurant -> meat factory
-	*FryCook
-	-"A lazy, greasy patty-flipper.<br>Each fry cook adds <b>+10%</b> to manual sebby-making."
-	-costs 15 sebbys
-	-gives 0.1 sebbys
-	-named fry cook|fry cooks
-	-visible
-	-picture : http://s24.postimg.org/lqr4h4ew1/sebby_Cook.png
-
-	*sebbyStand
-	-"A small sebby outlet on the edge of town."
-	-costs 100 sebbys
-	-gives 0.5 sebbys
-	-named sebby stand|sebby stands
-	-picture : http://s29.postimg.org/xxof3pr3n/sebby_Stand.png
-
-	*Diner
-	-"Comes with a bar, ambience, and sassy waitresses."
-	-costs 500 sebbys
-	-gives 3 sebbys
-	-named diner|diners
-	-picture : http://s27.postimg.org/j4vrpdrvj/sebby_Diner.png
-
-	*Restaurant
-	-"A respectable building bustling with hungry customers."
-	-costs 3000 sebbys
-	-gives 15 sebbys
-	-named restaurant|restaurants
-
-	*MeatFactory
-	-"A large processing plant that churns out fresh patties from cows."
-	-costs 20000 sebbys
-	-gives 60 sebbys
-	-named meat factory|meat factories
-
-Upgrades :
-	*BuildingPermit1
-	-"Oh joy! You've sold enough sebbys to start building your own sebby stands!<br>Unlocks <b>sebby stands</b>."
-	-costs 100 sebbys
-	-unlocks at 100 sebbys, 1 frycook
-	-unlocks sebbystand
-	-named Building permit : sebby stand
-	*BuildingPermit2
-	-"With this permit, you can start building good old diners with nothing but sebbys on the menu.<br>Unlocks <b>diners</b>."
-	-costs 500 sebbys
-	-unlocks at 500 sebbys, 1 sebbystand
-	-unlocks diner
-	-named Building permit : diner
-	*BuildingPermit3
-	-"You've passed enough health inspections to earn this shiny new building permit, which lets you build restaurants!<br>Unlocks <b>restaurants</b>."
-	-costs 3000 sebbys
-	-unlocks at 3000 sebbys, 1 diner
-	-unlocks restaurant
-	-named Building permit : restaurant
-	*BuildingPermit4
-	-"It's time to take it to the next level. Don't settle for retail meat of dubious origin - get this permit and build your very own meat-processing plants!<br>Unlocks <b>meat factories</b>."
-	-costs 20000 sebbys
-	-unlocks at 20000 sebbys, 1 restaurant
-	-unlocks meatfactory
-	-named Building permit : meat factories
-
-	*KitchenSynergy
-	-"Each fry cook now helps you with making sebbys.<br><b>Clicking</b> generates <b>1 more sebby per fry cook</b>."
-	-costs 200 sebbys
-	-multiplies efficiency of Makesebby by 100% per frycook
-	-unlocks at 100 sebbys
-	-named Kitchen synergy
-
-	*HelpingHand
-	-"You get a friend to assist you in flipping sebbys.<br><b>Clicking</b> is <b>twice</b> as efficient.<br><b>Fry cooks</b> are <b>20%</b> more efficient."
-	-costs 200 sebbys
-	-multiplies efficiency of Makesebby by 200%
-	-multiplies efficiency of FryCook by 120%
-	-unlocks at 100 sebbys
-	-named Helping hand
-	*SteadyPace
-	-"After so much patty-flipping, you're starting to pick up speed!<br><b>Clicking</b> is <b>twice</b> as efficient.<br><b>Fry cooks</b> are <b>20%</b> more efficient."
-	-costs 2000 sebbys
-	-multiplies efficiency of Makesebby by 200%
-	-multiplies efficiency of FryCook by 120%
-	-unlocks at 1500 sebbys
-	-named Steady pace
-	*StreamlinedWorkflow
-	-"You've got it all worked out now, and making sebbys has become a second nature for you.<br><b>Clicking</b> is <b>twice</b> as efficient.<br><b>Fry cooks</b> are <b>20%</b> more efficient."
-	-costs 20000 sebbys
-	-multiplies efficiency of Makesebby by 200%
-	-multiplies efficiency of FryCook by 120%
-	-unlocks at 15000 sebbys
-	-named Streamlined workflow
-
-	*PremiumGradeSesameSeeds
-	-"You're not quite sure how sesame even grows, but those guys down the street seem to be pretty good at it.<br>sebby income <b>+5%</b>."
-	-costs 1000 sebbys
-	-multiplies income of sebbys by 105%
-	-unlocks at 500 sebbys
-	-named Premium-grade sesame seeds
-	*FluffierBuns
-	-"Those are the juiciest buns you've ever squeezed. You just might take one home as a pillow.<br>sebby income <b>+5%</b>."
-	-costs 1000 sebbys
-	-multiplies income of sebbys by 105%
-	-unlocks at 500 sebbys
-	-named Fluffier buns
-	*FinerPickleSlices
-	-"These are kind of a big dill.<br>sebby income <b>+5%</b>."
-	-costs 1000 sebbys
-	-multiplies income of sebbys by 105%
-	-unlocks at 500 sebbys
-	-named Finer pickle slices
-
-	*SuperSecretSauce
-	-"You're not even sure what's in it!<br>sebby income <b>+10%</b>."
-	-costs 100000 sebbys
-	-multiplies income of sebbys by 110%
-	-unlocks at 10000 sebbys
-	-named Super-secret sauce
-	*AllBeefPatties
-	-"You're kind of sad to see the roadkill-based family recipe go, but you've got the health inspectors on your back. So long, raccoons!<br>sebby income <b>+10%</b>."
-	-costs 100000 sebbys
-	-multiplies income of sebbys by 110%
-	-unlocks at 10000 sebbys
-	-named All-beef patties
-	*ExtraSoggyCheese
-	-"It's barely even cheese at all, but by golly is it the soggiest.<br>sebby income <b>+10%</b>."
-	-costs 100000 sebbys
-	-multiplies income of sebbys by 110%
-	-unlocks at 10000 sebbys
-	-named Extra-soggy cheese
-
-	*MagicTomatoes
-	-"Not actually magic, although they do glow with an ominous green light.<br>sebby income <b>+15%</b>."
-	-costs 10000000 sebbys
-	-multiplies income of sebbys by 115%
-	-unlocks at 1000000 sebbys
-	-named Magic tomatoes
-	*PrizeWinningOnions
-	-"They're so gorgeous you just might cry.<br>sebby income <b>+15%</b>."
-	-costs 10000000 sebbys
-	-multiplies income of sebbys by 115%
-	-unlocks at 1000000 sebbys
-	-named Prize-winning onions
-	*WholeLettuceLeaves
-	-"It's time to bring out the big guns - no more shall your sebbys be garnished with measly diced lettuce!<br>sebby income <b>+15%</b>."
-	-costs 10000000 sebbys
-	-multiplies income of sebbys by 115%
-	-unlocks at 1000000 sebbys
-	-named Whole lettuce leaves
-
-	*SteelSpatulas
-	-"No more wonky plastic spatulas that melt on the grill!<br><b>Fry cooks</b> are <b>50%</b> more efficient."
-	-costs 200 sebbys
-	-multiplies efficiency of FryCook by 150%
-	-unlocks at 1 FryCook
-	-named Straighter spatulas
-	*NeaterUniforms
-	-"Boost employee morale with these snazzy suits!<br><b>Fry cooks</b> are <b>twice</b> as efficient."
-	-costs 2000 sebbys
-	-multiplies efficiency of FryCook by 200%
-	-unlocks at 10 FryCook
-	-named Neater uniforms
-	*EmployeeTrainingVideos
-	-"Help get the newbies up to speed with these tapes full of corporate rap and sick rhymes.<br><b>Fry cooks</b> are <b>twice</b> as efficient."
-	-costs 20000 sebbys
-	-multiplies efficiency of FryCook by 200%
-	-unlocks at 50 FryCook
-	-named Employee training videos
-
-	*PaperNapkins
-	-"Now your customers can wipe off that ketchup sauce dribbling from their chins!<br><b>sebby stands</b> are <b>150%</b> more efficient."
-	-costs 3000 sebbys
-	-multiplies efficiency of sebbyStand by 150%
-	-unlocks at 1 sebbyStand
-	-named Paper napkins
-	*SodaDispensers
-	-"Make extra profit with these fizzy, sugary thirst mutilators.<br><b>sebby stands</b> are <b>twice</b> as efficient."
-	-costs 30000 sebbys
-	-multiplies efficiency of sebbyStand by 200%
-	-unlocks at 10 sebbyStand
-	-named Soda dispensers
-	*Restrooms
-	-"It's really just a port-a-potty, but when you gotta go, etc.<br><b>sebby stands</b> are <b>twice</b> as efficient."
-	-costs 300000 sebbys
-	-multiplies efficiency of sebbyStand by 200%
-	-unlocks at 50 sebbyStand
-	-named Restrooms
-
-	*PrintedMenus
-	-"Charming menus with a glossy finish, with stylish Comic Sans headers.<br><b>Diners</b> are <b>150%</b> more efficient."
-	-costs 20000 sebbys
-	-multiplies efficiency of Diner by 150%
-	-unlocks at 1 Diner
-	-named Printed menus
-	*TallerBarstools
-	-"Accomodates even the smallest of guests, or those with cripplingly low self-esteem.<br><b>Diners</b> are <b>twice</b> as efficient."
-	-costs 200000 sebbys
-	-multiplies efficiency of Diner by 200%
-	-unlocks at 10 Diner
-	-named Taller barstools
-	*NeonSigns
-	-"Advertise your diners the way they were meant to be with these wacky flashing abominations!<br><b>Diners</b> are <b>twice</b> as efficient."
-	-costs 2000000 sebbys
-	-multiplies efficiency of Diner by 200%
-	-unlocks at 50 Diner
-	-named Neon signs
-
-	*DimLights
-	-"Sometimes, you can both bring a classy mood and conceal the decaying wallpaper by simply dimming down the lights.<br><b>Restaurants</b> are <b>150%</b> more efficient."
-	-costs 100000 sebbys
-	-multiplies efficiency of Restaurant by 150%
-	-unlocks at 1 Restaurant
-	-named Dim lights
-	*FlatScreenTVs
-	-"Why waste your time in restaurants if you're going to miss the latest sports event? These slick new plasma screens might help remedy this situation.<br><b>Restaurants</b> are <b>twice</b> as efficient."
-	-costs 1000000 sebbys
-	-multiplies efficiency of Restaurant by 200%
-	-unlocks at 10 Restaurant
-	-named Flat-screen TVs
-	*PaidCritics
-	-"Food critics love your sebbys! (At least, they do after some serious compensation.)<br><b>Restaurants</b> are <b>twice</b> as efficient."
-	-costs 10000000 sebbys
-	-multiplies efficiency of Restaurant by 200%
-	-unlocks at 50 Restaurant
-	-named Paid critics
-
-	*Guardrails
-	-"Sometimes, the simplest improvements are the best! These guardrails will prevent your factory workers from occasionally ending up in the patties.<br><b>Meat factories</b> are <b>150%</b> more efficient."
-	-costs 1000000 sebbys
-	-multiplies efficiency of MeatFactory by 150%
-	-unlocks at 1 MeatFactory
-	-named Guardrails
-	*BovinePulverisators
-	-"These turn a live cow into pink mush in 6 seconds flat!<br><b>Meat factories</b> are <b>twice</b> as efficient."
-	-costs 10000000 sebbys
-	-multiplies efficiency of MeatFactory by 200%
-	-unlocks at 10 MeatFactory
-	-named Bovine pulverisators
-	*BeefEnlargers
-	-"Enlarge your cattle with these risk-free anabolics TODAY!<br><b>Meat factories</b> are <b>twice</b> as efficient."
-	-costs 100000000 sebbys
-	-multiplies efficiency of MeatFactory by 200%
-	-unlocks at 50 MeatFactory
-	-named Beef enlargers
-
-Achievements :
-	*LetsGetCookin
-	-"Cook <b>1</b> sebby."
-	-unlocks at 1 sebbys
-	-named Let's get cookin'
-	*Peckish
-	-"Cook <b>100</b> sebbys."
-	-unlocks at 100 sebbys
-	*Hungry
-	-"Cook <b>10000</b> sebbys."
-	-unlocks at 10000 sebbys
-	*Ravenous
-	-"Cook <b>1000000</b> sebbys."
-	-unlocks at 1000000 sebbys
-	*Unstoppable
-	-"Cook <b>100000000</b> sebbys."
-	-unlocks at 100000000 sebbys
-	*FastFoodTycoon
-	-"Cook <b>10000000000</b> sebbys."
-	-unlocks at 10000000000 sebbys
-	-named Fast-food tycoon
-
-	*HiredHelp
-	-"Hire <b>1</b> fry cook."
-	-unlocks at 1 frycook
-	-named Hired help
-	*Teamwork
-	-"Hire <b>50</b> fry cooks."
-	-unlocks at 50 frycook
-	-named Teamwork
-	*UnderpaidBattalion
-	-"Hire <b>100</b> fry cooks."
-	-unlocks at 100 frycook
-	-named Underpaid battalion
+	name:Sebby Clicker
+	by:Orteil
+	desc:This is a simple idle game to showcase some of the basic functionalities of Idle Game Maker.<//>Make sebbies and shoot for the stars!
+	created:25/7/2017
+	updated:24/10/2017
+	version:1
+ 
+Settings
+	background:stuff/meadow.jpg
+	building cost increase:115%
+	building cost refund:50%
+	spritesheet:icons, 48 by 48, stuff/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
+	stylesheet:stuff/bigBlue.css
+ 
+Layout
+	use default
+ 
+Buttons
+	*sebbyButton
+		name:Make a sebby
+		desc:Click this little sebby to get more sebbies!
+		on click:anim icon wobble
+		on click:yield 1 sebby
+		on click:if (have goldenTouch and chance(1%)) yield 1 goldenCarrot
+		icon:stuff/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+		tooltip class:red
+ 
+Resources
+	*sebby|sebbies
+		name:sebby|sebbies
+		desc:These are your sebbies. You can use them to purchase things. Your goal is to have as many sebbies as possible!
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+ 
+	*goldenCarrot|goldenCarrots
+		name:Golden carrot|Golden carrots
+		desc:These shiny carrots are terribly rare, terribly precious and terribly delicious!
+		icon:icons[0,1]
+		class:noBackground
+		hidden when 0
+ 
+Shinies
+	*luckysebby
+		on click:log Woop
+		movement:onRight moveLeft fade bounce:0.05
+		frequency:60
+		frequency variation:30
+		icon:stuff/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
+		class:bigButton
+		on click:
+			$boost=1
+			if (have clover) $boost=4
+			if (chance(25%))
+				//get at least 7, or between 1 and 3 minutes of our sebby production
+				$amount=max(7,random(sebbies:ps*60*1,sebbies:ps*60*3))*$boost
+				toast The lucky sebby grants you<//><b>[$amount] sebbies</b>.
+				yield $amount sebbies
+			else
+				$amount=1*$boost
+				toast The lucky sebby grants you<//><b>[$amount] golden carrot[s?$amount]</b>!
+				yield $amount goldenCarrot
+			end
+		end
+ 
+Buildings
+	*TEMPLATE
+		on click:anim glow
+ 
+	*cage|cages
+		name:Rabbit cage|Rabbit cages
+		desc:A tiny little cage.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
+		icon:icons[3,0]
+		cost:15 sebbies
+		on tick:yield 0.1 sebby
+		unlocked
+ 
+	*hutch|hutches
+		name:Rabbit hutch|Rabbit hutches
+		desc:A bit roomier than a cage, with enough space to hop around.<//><b>Effect:</b><.>Produces 1 rabbit every 2 seconds.
+		icon:icons[3,1]
+		cost:100 sebbies
+		on tick:yield 0.5 sebbies
+		req:100 sebbies:earned
+ 
+	*coop|coops
+		name:Rabbit coop|Rabbit coops
+		desc:A much nicer rabbit home where full sebby families can live.<//><b>Effect:</b><.>Produces 5 rabbits per second.
+		icon:icons[3,2]
+		cost:600 sebbies
+		on tick:yield 5 sebbies
+		req:600 sebbies:earned
+ 
+	*pen|pens
+		name:Rabbit pen|Rabbit pens
+		desc:A lovely enclosure with plenty of green space.<//><b>Effect:</b><.>Produces 12 rabbits per second.
+		icon:icons[3,3]
+		cost:4000 sebbies
+		on tick:yield 12 sebbies
+		req:4000 sebbies:earned
+ 
+	*meadow|meadows
+		name:Rabbit meadow|Rabbit meadows
+		desc:A wide open space full of shade and lush grass.<//><b>Effect:</b><.>Produces 90 rabbits per second.
+		icon:icons[3,4]
+		cost:20000 sebbies
+		on tick:yield 90 sebbies
+		req:20000 sebbies:earned
+ 
+	*village|villages
+		name:Rabbit village|Rabbit villages
+		desc:Your sebbies are building their own villages now!<//><b>Effect:</b><.>Produces 300 rabbits per second.
+		icon:icons[3,5]
+		cost:200000 sebbies, 1 goldenCarrot
+		on tick:yield 300 sebbies
+		req:200000 sebbies:earned and independenceDay
+ 
+	*city|cities
+		name:Rabbit city|Rabbit cities
+		desc:A bustling little city, populated with busy rabbits.<//><b>Effect:</b><.>Produces 1000 rabbits per second.
+		icon:icons[3,6]
+		cost:3000000 sebbies, 4 goldenCarrots
+		on tick:yield 1000 sebbies
+		req:3000000 sebbies:earned and independenceDay
+ 
+	*citadel|citadels
+		name:Moon citadel|Moon citadels
+		desc:An ornate palace standing on the moon, ruled by sebby kings and queens and staffed with royal sebby guards.<//><b>Effect:</b><.>Produces 4000 rabbits per second.
+		icon:icons[3,7]
+		cost:70000000 sebbies, 16 goldenCarrots
+		on tick:yield 4000 sebbies
+		on tick:if (have moonGardens) yield 0.01 goldenCarrot
+		req:70000000 sebbies:earned and independenceDay
+ 
+	*fortress
+		name:Freedom fortress
+		text:Freedom fortress ([this]%)
+		desc:A huge sebby castle. A monument to the adventurous spirit of sebbykind, which will take time and effort to complete.<//><b>The fortress is [this]% complete.</b>
+		icon:icons[3,8]
+		cost:300000000 sebbies, 100 goldenCarrots
+		req:70000000 sebbies:earned and independenceDay
+		limit:100
+		cost increase:105%
+ 
+Upgrades
+	*TEMPLATE
+		on click:anim glow
+ 
+	//food upgrades
+	//inspiration : http://rabbit.org/suggested-vegetables-and-fruits-for-a-rabbit-diet/
+ 
+	*Gaming Chair
+		name:Gaming Chair
+		desc:Totally not hacking.<//><b>Effect:</b><.>+1 sebby/click
+		icon:icons[1,1]
+		cost:100 sebbies
+		passive:increase sebby yield of sebbyButton by 1
+		req:10 sebbies:earned
+ 
+	*RBB Keyboard
+		name:RBB Keyboard
+		desc:The most important part of a gaming pc.<//><b>Effect:</b><.>+1 sebby/click
+		icon:icons[1,2]
+		cost:200 sebbies
+		passive:increase sebby yield of sebbyButton by 1
+		req:50 sebbies:earned
+ 
+	*lettuce
+		name:Lettuce
+		desc:Frilly greens loved by all sebbies.<//><b>Effect:</b><.>+1 sebby/click
+		icon:icons[1,3]
+		cost:400 sebbies
+		passive:increase sebby yield of sebbyButton by 1
+		req:200 sebbies:earned
+ 
+	*broccoli
+		name:Broccoli
+		desc:Crunchy greens that look like little trees.<//><b>Effect:</b><.>sebbies/click x2<.>sebby production +5%
+		icon:icons[1,4]
+		cost:3000 sebbies
+		passive:multiply sebby yield of sebbyButton by 2
+		passive:multiply yield of sebbies by 1.05
+		req:1000 sebbies:earned
+ 
+	*apple
+		name:Apple
+		desc:Nice pieces of juicy red apples.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
+		icon:icons[1,5]
+		cost:10000 sebbies
+		passive:multiply sebby yield of sebbyButton by 1.5
+		passive:multiply yield of sebbies by 1.05
+		req:1000 sebbies:earned
+ 
+	*radish
+		name:Radish
+		desc:Purple, crunchy, and strangely spicy.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
+		icon:icons[1,6]
+		cost:50000 sebbies
+		passive:multiply sebby yield of sebbyButton by 1.5
+		passive:multiply yield of sebbies by 1.05
+		req:10000 sebbies:earned
+ 
+	*mint
+		name:Mint
+		desc:Tasty, and gives your sebbies a lovely breath.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
+		icon:icons[1,7]
+		cost:100000 sebbies
+		passive:multiply sebby yield of sebbyButton by 1.5
+		passive:multiply yield of sebbies by 1.05
+		req:50000 sebbies:earned
+ 
+	*chard
+		name:Chard
+		desc:Broad leaves that make for a tasty salad.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
+		icon:icons[1,8]
+		cost:500000 sebbies
+		passive:multiply sebby yield of sebbyButton by 1.5
+		passive:multiply yield of sebbies by 1.05
+		req:100000 sebbies:earned
+ 
+	*cherry
+		name:Cherry
+		desc:Your sebbies look like little vampires when they start munching on these!<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
+		icon:icons[1,9]
+		cost:1000000 sebbies
+		passive:multiply sebby yield of sebbyButton by 1.5
+		passive:multiply yield of sebbies by 1.05
+		req:500000 sebbies:earned
+ 
+	*carrot
+		name:Carrot
+		desc:The quintessential rabbit food! Crunchy, orange, and perfect.<//><b>Effect:</b><.>sebbies/click x2<.>sebby production +10%
+		icon:icons[1,0]
+		cost:100000000 sebbies
+		passive:multiply sebby yield of sebbyButton by 2
+		passive:multiply yield of sebbies by 1.1
+		req:1000000 sebbies:earned
+ 
+	//building upgrades
+ 
+	*buildingUpgrade1
+		name:Sippy bottles
+		desc:Your sebbies can drink their fill!<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
+		icon:icons[2,0] icons[3,0]
+		cost:1000 sebbies
+		passive:multiply yield of cage by 2
+		passive:multiply yield of hutch by 2
+		passive:multiply yield of coop by 2
+		req:(cages>=10 or hutches>=10 or coops>=10)
+ 
+	*buildingUpgrade2
+		name:Prime grade hay
+		desc:Not just for horses anymore!<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
+		icon:icons[2,0] icons[3,1]
+		cost:100000 sebbies
+		passive:multiply yield of cage by 2
+		passive:multiply yield of hutch by 2
+		passive:multiply yield of coop by 2
+		req:(cages>=50 or hutches>=50 or coops>=50)
+ 
+	*buildingUpgrade3
+		name:Shredded newspapers
+		desc:You'd think they just poop on these, but they really enjoy reading the Sunday comics.<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
+		icon:icons[2,0] icons[3,2]
+		cost:5000000 sebbies
+		passive:multiply yield of cage by 2
+		passive:multiply yield of hutch by 2
+		passive:multiply yield of coop by 2
+		req:(cages>=100 or hutches>=100 or coops>=100)
+ 
+	*buildingUpgrade4
+		name:Pretty fences
+		desc:Just the right size so your sebbies can peek through but not hop over!<//><b>Effect:</b><.>rabbit pen production x2<.>rabbit meadow production x2
+		icon:icons[2,0] icons[3,3]
+		cost:50000 sebbies
+		passive:multiply yield of pen by 2
+		passive:multiply yield of meadow by 2
+		req:(pens>=10 or meadows>=10)
+ 
+	*buildingUpgrade5
+		name:sebby playground
+		desc:If your sebbies are outside, they might as well get some exercise!<//><b>Effect:</b><.>rabbit pen production x2<.>rabbit meadow production x2
+		icon:icons[2,0] icons[3,4]
+		cost:5000000 sebbies
+		passive:multiply yield of pen by 2
+		passive:multiply yield of meadow by 2
+		req:(pens>=50 or meadows>=50)
+ 
+	*buildingUpgrade6
+		name:sebby TVs
+		desc:Televisions that broadcast sebby cartoons, sebby sitcoms, and sebby news bulletins.<//><b>Effect:</b><.>rabbit village production x2<.>rabbit city production x2
+		icon:icons[2,0] icons[3,5]
+		cost:1000000 sebbies
+		passive:multiply yield of village by 2
+		passive:multiply yield of city by 2
+		req:(villages>=10 or cities>=10)
+ 
+	*buildingUpgrade7
+		name:Wee little sebby cars
+		desc:Your sebbies drive around in these. How nice!<//><b>Effect:</b><.>rabbit village production x2<.>rabbit city production x2
+		icon:icons[2,0] icons[3,6]
+		cost:500000000 sebbies
+		passive:multiply yield of village by 2
+		passive:multiply yield of city by 2
+		req:(villages>=50 or cities>=50)
+ 
+	*buildingUpgrade8
+		name:Soothing moon crystals
+		desc:Just really nice to be around.<//><b>Effect:</b><.>moon citadel production x2
+		icon:icons[2,0] icons[3,7]
+		cost:1000000000 sebbies
+		passive:multiply yield of citadel by 2
+		req:10 citadels
+ 
+	//golden carrot upgrades
+ 
+	*goldenTouch
+		name:Golden touch
+		desc:The delicate art of finding vegetables made of precious metals.<//><b>Effect:</b><.>1% chance of gaining 1 golden carrot per sebby click
+		icon:icons[2,5]
+		cost:1 goldenCarrot
+		req:1 goldenCarrot:earned
+ 
+	*rabbitHaste
+		name:Rabbit's haste
+		desc:I'm late! I'm late! For a very important date!<//><b>Effect:</b><.>lucky sebbies appear 30% more often
+		icon:icons[2,6]
+		passive:multiply frequency of luckysebby by 0.7
+		cost:5 goldenCarrots
+		req:1 goldenCarrot:earned
+ 
+	*independenceDay
+		name:Independence day
+		desc:Your sebbies are making their first step towards declaring their independence from the oppressive shackles of pens and cages.<//><b>Effect:</b><.>unlocks new buildings
+		icon:icons[2,7]
+		cost:10 goldenCarrots
+		req:5 goldenCarrots:earned
+ 
+	*clover
+		name:Clover
+		desc:A delicious herb that tastes lucky.<//><b>Effect:</b><.>lucky sebby effects are 4 times more powerful
+		icon:icons[2,8]
+		cost:100 goldenCarrots
+		req:50 goldenCarrots:earned
+ 
+	*moonGardens
+		name:Moon gardens
+		desc:The royal botanists in your moon citadels have found new ways of cultivating plants in reduced gravity!<//><b>Effect:</b><.>moon citadels now produce 1 golden carrot every 100 seconds
+		icon:icons[2,9]
+		cost:100 goldenCarrots
+		req:50 goldenCarrots:earned
+ 
+Achievements
+	*TEMPLATE
+		on click:anim glow
+ 
+	*sebbyAchiev1
+		name:Run rabbit run
+		desc:Have <b>1</b> sebby.
+		req:1 sebby
+		icon:icons[2,4] icons[0,2] icons[0,6]
+	*sebbyAchiev2
+		name:sebbiest home videos
+		desc:Have <b>1000</b> sebbies.
+		req:1000 sebbies
+		icon:icons[2,4] icons[0,3] icons[0,6]
+	*sebbyAchiev3
+		name:You got buns, hun
+		desc:Have <b>1000000</b> sebbies.
+		req:10000000 sebbies
+		icon:icons[2,4] icons[0,4] icons[0,6]
+ 
+	*clickAchiev1
+		name:That tickles
+		desc:Click the sebby <b>10</b> times.
+		req:10 sebbyButton clicks
+		icon:icons[2,2] icons[0,2] icons[0,6]
+	*clickAchiev2
+		name:Don't squeeze me I'll fart
+		desc:Click the sebby <b>100</b> times.
+		req:100 sebbyButton clicks
+		icon:icons[2,2] icons[0,3] icons[0,6]
+	*clickAchiev3
+		name:You're cruising for a bruising, dude
+		desc:Click the sebby <b>2000</b> times.
+		req:2000 sebbyButton clicks
+		icon:icons[2,2] icons[0,4] icons[0,6]
+ 
+	*sebbyPsAchiev1
+		name:Be vewy vewy quiet
+		desc:Produce <b>10</b> sebbies per second.
+		req:10 sebbies per second
+		icon:icons[2,3] icons[0,2] icons[0,6]
+	*sebbyPsAchiev2
+		name:Hop and a skip
+		desc:Produce <b>1000</b> sebbies per second.
+		req:1000 sebbies per second
+		icon:icons[2,3] icons[0,3] icons[0,6]
+	*sebbyPsAchiev3
+		name:Go forth and multiply
+		desc:Produce <b>100000</b> sebbies per second.
+		req:100000 sebbies per second
+		icon:icons[2,3] icons[0,4] icons[0,6]
+ 
+	*carrotAchiev1
+		name:Isn't it neat
+		desc:Have <b>1</b> golden carrot.
+		req:1 goldenCarrot
+		icon:icons[0,1] icons[0,2]
+	*carrotAchiev2
+		name:All that glitters
+		desc:Have <b>100</b> golden carrots.
+		req:100 goldenCarrot
+		icon:icons[0,1] icons[0,3]
+	*carrotAchiev3
+		name:Zero nutritional value
+		desc:Have <b>1000</b> golden carrots.
+		req:1000 goldenCarrot
+		icon:icons[0,1] icons[0,4]
+ 
+	*fortressAchiev
+		name:Freedom!
+		desc:Complete building the <b>freedom fortress</b>.<//>This is it. You beat the game!
+		req:100 fortress
+		icon:icons[3,8] icons[0,4]
