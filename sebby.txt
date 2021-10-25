@@ -1,21 +1,21 @@
 Let's make a game!
-	name:Sebby Clicker
+	name:sebby Clicker
 	by:Orteil
 	desc:This is a simple idle game to showcase some of the basic functionalities of Idle Game Maker.<//>Make sebbies and shoot for the stars!
 	created:25/7/2017
 	updated:24/10/2017
 	version:1
- 
+
 Settings
 	background:stuff/meadow.jpg
 	building cost increase:115%
 	building cost refund:50%
-	spritesheet:icons, 48 by 48, stuff/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
+	spritesheet:icons, 48 by 48, stuff/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
 	stylesheet:stuff/bigBlue.css
- 
+
 Layout
 	use default
- 
+		
 Buttons
 	*sebbyButton
 		name:Make a sebby
@@ -29,7 +29,7 @@ Buttons
 		icon class:shadowed
 		tooltip origin:bottom
 		tooltip class:red
- 
+		
 Resources
 	*sebby|sebbies
 		name:sebby|sebbies
@@ -37,21 +37,21 @@ Resources
 		icon:icons[0,0]
 		class:noBackground
 		show earned
- 
+		
 	*goldenCarrot|goldenCarrots
 		name:Golden carrot|Golden carrots
 		desc:These shiny carrots are terribly rare, terribly precious and terribly delicious!
 		icon:icons[0,1]
 		class:noBackground
 		hidden when 0
- 
+		
 Shinies
 	*luckysebby
 		on click:log Woop
 		movement:onRight moveLeft fade bounce:0.05
 		frequency:60
 		frequency variation:30
-		icon:stuff/https://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
+		icon:stuff/luckyhttps://download1652.mediafire.com/ykgg2x7sbzgg/9n9qb2yczt8o1tq/sebby.png
 		class:bigButton
 		on click:
 			$boost=1
@@ -67,19 +67,19 @@ Shinies
 				yield $amount goldenCarrot
 			end
 		end
- 
+
 Buildings
 	*TEMPLATE
 		on click:anim glow
- 
-	*Cage|Cages
-		name:Cage|Cage
-		desc:Not hacking.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
+		
+	*cage|cages
+		name:Rabbit cage|Rabbit cages
+		desc:A tiny little cage.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
 		icon:icons[3,0]
 		cost:15 sebbies
 		on tick:yield 0.1 sebby
 		unlocked
- 
+	
 	*hutch|hutches
 		name:Rabbit hutch|Rabbit hutches
 		desc:A bit roomier than a cage, with enough space to hop around.<//><b>Effect:</b><.>Produces 1 rabbit every 2 seconds.
@@ -87,7 +87,7 @@ Buildings
 		cost:100 sebbies
 		on tick:yield 0.5 sebbies
 		req:100 sebbies:earned
- 
+	
 	*coop|coops
 		name:Rabbit coop|Rabbit coops
 		desc:A much nicer rabbit home where full sebby families can live.<//><b>Effect:</b><.>Produces 5 rabbits per second.
@@ -95,7 +95,7 @@ Buildings
 		cost:600 sebbies
 		on tick:yield 5 sebbies
 		req:600 sebbies:earned
- 
+	
 	*pen|pens
 		name:Rabbit pen|Rabbit pens
 		desc:A lovely enclosure with plenty of green space.<//><b>Effect:</b><.>Produces 12 rabbits per second.
@@ -103,7 +103,7 @@ Buildings
 		cost:4000 sebbies
 		on tick:yield 12 sebbies
 		req:4000 sebbies:earned
- 
+	
 	*meadow|meadows
 		name:Rabbit meadow|Rabbit meadows
 		desc:A wide open space full of shade and lush grass.<//><b>Effect:</b><.>Produces 90 rabbits per second.
@@ -111,7 +111,7 @@ Buildings
 		cost:20000 sebbies
 		on tick:yield 90 sebbies
 		req:20000 sebbies:earned
- 
+	
 	*village|villages
 		name:Rabbit village|Rabbit villages
 		desc:Your sebbies are building their own villages now!<//><b>Effect:</b><.>Produces 300 rabbits per second.
@@ -119,7 +119,7 @@ Buildings
 		cost:200000 sebbies, 1 goldenCarrot
 		on tick:yield 300 sebbies
 		req:200000 sebbies:earned and independenceDay
- 
+		
 	*city|cities
 		name:Rabbit city|Rabbit cities
 		desc:A bustling little city, populated with busy rabbits.<//><b>Effect:</b><.>Produces 1000 rabbits per second.
@@ -127,7 +127,7 @@ Buildings
 		cost:3000000 sebbies, 4 goldenCarrots
 		on tick:yield 1000 sebbies
 		req:3000000 sebbies:earned and independenceDay
- 
+		
 	*citadel|citadels
 		name:Moon citadel|Moon citadels
 		desc:An ornate palace standing on the moon, ruled by sebby kings and queens and staffed with royal sebby guards.<//><b>Effect:</b><.>Produces 4000 rabbits per second.
@@ -136,7 +136,7 @@ Buildings
 		on tick:yield 4000 sebbies
 		on tick:if (have moonGardens) yield 0.01 goldenCarrot
 		req:70000000 sebbies:earned and independenceDay
- 
+		
 	*fortress
 		name:Freedom fortress
 		text:Freedom fortress ([this]%)
@@ -146,30 +146,30 @@ Buildings
 		req:70000000 sebbies:earned and independenceDay
 		limit:100
 		cost increase:105%
- 
+		
 Upgrades
 	*TEMPLATE
 		on click:anim glow
- 
+	
 	//food upgrades
 	//inspiration : http://rabbit.org/suggested-vegetables-and-fruits-for-a-rabbit-diet/
- 
-	*Something
-		name:Something
-		desc:Its something<//><b>Effect:</b><.>+1 sebby/click
+	
+	*parsley
+		name:Parsley
+		desc:A nice little supplement to your sebbies' diet.<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,1]
 		cost:100 sebbies
 		passive:increase sebby yield of sebbyButton by 1
 		req:10 sebbies:earned
- 
-	*otherRBBKeyboard
-		name:otherRBBKeyboard
-		desc:The most important part of a gaming pc.<//><b>Effect:</b><.>+1 sebby/click
+		
+	*spinach
+		name:Spinach
+		desc:Big tasty leaves, perfect for hungry sebbies.<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,2]
 		cost:200 sebbies
 		passive:increase sebby yield of sebbyButton by 1
 		req:50 sebbies:earned
- 
+		
 	*lettuce
 		name:Lettuce
 		desc:Frilly greens loved by all sebbies.<//><b>Effect:</b><.>+1 sebby/click
@@ -177,7 +177,7 @@ Upgrades
 		cost:400 sebbies
 		passive:increase sebby yield of sebbyButton by 1
 		req:200 sebbies:earned
- 
+		
 	*broccoli
 		name:Broccoli
 		desc:Crunchy greens that look like little trees.<//><b>Effect:</b><.>sebbies/click x2<.>sebby production +5%
@@ -186,7 +186,7 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 2
 		passive:multiply yield of sebbies by 1.05
 		req:1000 sebbies:earned
- 
+		
 	*apple
 		name:Apple
 		desc:Nice pieces of juicy red apples.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
@@ -195,7 +195,7 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 1.5
 		passive:multiply yield of sebbies by 1.05
 		req:1000 sebbies:earned
- 
+		
 	*radish
 		name:Radish
 		desc:Purple, crunchy, and strangely spicy.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
@@ -204,7 +204,7 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 1.5
 		passive:multiply yield of sebbies by 1.05
 		req:10000 sebbies:earned
- 
+		
 	*mint
 		name:Mint
 		desc:Tasty, and gives your sebbies a lovely breath.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
@@ -213,7 +213,7 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 1.5
 		passive:multiply yield of sebbies by 1.05
 		req:50000 sebbies:earned
- 
+		
 	*chard
 		name:Chard
 		desc:Broad leaves that make for a tasty salad.<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
@@ -222,7 +222,7 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 1.5
 		passive:multiply yield of sebbies by 1.05
 		req:100000 sebbies:earned
- 
+		
 	*cherry
 		name:Cherry
 		desc:Your sebbies look like little vampires when they start munching on these!<//><b>Effect:</b><.>sebbies/click x1.5<.>sebby production +5%
@@ -231,7 +231,7 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 1.5
 		passive:multiply yield of sebbies by 1.05
 		req:500000 sebbies:earned
- 
+		
 	*carrot
 		name:Carrot
 		desc:The quintessential rabbit food! Crunchy, orange, and perfect.<//><b>Effect:</b><.>sebbies/click x2<.>sebby production +10%
@@ -240,9 +240,9 @@ Upgrades
 		passive:multiply sebby yield of sebbyButton by 2
 		passive:multiply yield of sebbies by 1.1
 		req:1000000 sebbies:earned
- 
+	
 	//building upgrades
- 
+	
 	*buildingUpgrade1
 		name:Sippy bottles
 		desc:Your sebbies can drink their fill!<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
@@ -252,7 +252,7 @@ Upgrades
 		passive:multiply yield of hutch by 2
 		passive:multiply yield of coop by 2
 		req:(cages>=10 or hutches>=10 or coops>=10)
- 
+		
 	*buildingUpgrade2
 		name:Prime grade hay
 		desc:Not just for horses anymore!<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
@@ -262,7 +262,7 @@ Upgrades
 		passive:multiply yield of hutch by 2
 		passive:multiply yield of coop by 2
 		req:(cages>=50 or hutches>=50 or coops>=50)
- 
+		
 	*buildingUpgrade3
 		name:Shredded newspapers
 		desc:You'd think they just poop on these, but they really enjoy reading the Sunday comics.<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
@@ -272,7 +272,7 @@ Upgrades
 		passive:multiply yield of hutch by 2
 		passive:multiply yield of coop by 2
 		req:(cages>=100 or hutches>=100 or coops>=100)
- 
+		
 	*buildingUpgrade4
 		name:Pretty fences
 		desc:Just the right size so your sebbies can peek through but not hop over!<//><b>Effect:</b><.>rabbit pen production x2<.>rabbit meadow production x2
@@ -281,7 +281,7 @@ Upgrades
 		passive:multiply yield of pen by 2
 		passive:multiply yield of meadow by 2
 		req:(pens>=10 or meadows>=10)
- 
+		
 	*buildingUpgrade5
 		name:sebby playground
 		desc:If your sebbies are outside, they might as well get some exercise!<//><b>Effect:</b><.>rabbit pen production x2<.>rabbit meadow production x2
@@ -290,7 +290,7 @@ Upgrades
 		passive:multiply yield of pen by 2
 		passive:multiply yield of meadow by 2
 		req:(pens>=50 or meadows>=50)
- 
+		
 	*buildingUpgrade6
 		name:sebby TVs
 		desc:Televisions that broadcast sebby cartoons, sebby sitcoms, and sebby news bulletins.<//><b>Effect:</b><.>rabbit village production x2<.>rabbit city production x2
@@ -299,7 +299,7 @@ Upgrades
 		passive:multiply yield of village by 2
 		passive:multiply yield of city by 2
 		req:(villages>=10 or cities>=10)
- 
+		
 	*buildingUpgrade7
 		name:Wee little sebby cars
 		desc:Your sebbies drive around in these. How nice!<//><b>Effect:</b><.>rabbit village production x2<.>rabbit city production x2
@@ -308,7 +308,7 @@ Upgrades
 		passive:multiply yield of village by 2
 		passive:multiply yield of city by 2
 		req:(villages>=50 or cities>=50)
- 
+		
 	*buildingUpgrade8
 		name:Soothing moon crystals
 		desc:Just really nice to be around.<//><b>Effect:</b><.>moon citadel production x2
@@ -316,16 +316,16 @@ Upgrades
 		cost:1000000000 sebbies
 		passive:multiply yield of citadel by 2
 		req:10 citadels
- 
+		
 	//golden carrot upgrades
- 
+	
 	*goldenTouch
 		name:Golden touch
 		desc:The delicate art of finding vegetables made of precious metals.<//><b>Effect:</b><.>1% chance of gaining 1 golden carrot per sebby click
 		icon:icons[2,5]
 		cost:1 goldenCarrot
 		req:1 goldenCarrot:earned
- 
+		
 	*rabbitHaste
 		name:Rabbit's haste
 		desc:I'm late! I'm late! For a very important date!<//><b>Effect:</b><.>lucky sebbies appear 30% more often
@@ -333,32 +333,32 @@ Upgrades
 		passive:multiply frequency of luckysebby by 0.7
 		cost:5 goldenCarrots
 		req:1 goldenCarrot:earned
- 
+	
 	*independenceDay
 		name:Independence day
 		desc:Your sebbies are making their first step towards declaring their independence from the oppressive shackles of pens and cages.<//><b>Effect:</b><.>unlocks new buildings
 		icon:icons[2,7]
 		cost:10 goldenCarrots
 		req:5 goldenCarrots:earned
- 
+		
 	*clover
 		name:Clover
 		desc:A delicious herb that tastes lucky.<//><b>Effect:</b><.>lucky sebby effects are 4 times more powerful
 		icon:icons[2,8]
 		cost:100 goldenCarrots
 		req:50 goldenCarrots:earned
- 
+		
 	*moonGardens
 		name:Moon gardens
 		desc:The royal botanists in your moon citadels have found new ways of cultivating plants in reduced gravity!<//><b>Effect:</b><.>moon citadels now produce 1 golden carrot every 100 seconds
 		icon:icons[2,9]
 		cost:100 goldenCarrots
 		req:50 goldenCarrots:earned
- 
+		
 Achievements
 	*TEMPLATE
 		on click:anim glow
- 
+		
 	*sebbyAchiev1
 		name:Run rabbit run
 		desc:Have <b>1</b> sebby.
@@ -374,7 +374,7 @@ Achievements
 		desc:Have <b>1000000</b> sebbies.
 		req:10000000 sebbies
 		icon:icons[2,4] icons[0,4] icons[0,6]
- 
+		
 	*clickAchiev1
 		name:That tickles
 		desc:Click the sebby <b>10</b> times.
@@ -390,7 +390,7 @@ Achievements
 		desc:Click the sebby <b>2000</b> times.
 		req:2000 sebbyButton clicks
 		icon:icons[2,2] icons[0,4] icons[0,6]
- 
+		
 	*sebbyPsAchiev1
 		name:Be vewy vewy quiet
 		desc:Produce <b>10</b> sebbies per second.
@@ -406,7 +406,7 @@ Achievements
 		desc:Produce <b>100000</b> sebbies per second.
 		req:100000 sebbies per second
 		icon:icons[2,3] icons[0,4] icons[0,6]
- 
+		
 	*carrotAchiev1
 		name:Isn't it neat
 		desc:Have <b>1</b> golden carrot.
@@ -422,7 +422,7 @@ Achievements
 		desc:Have <b>1000</b> golden carrots.
 		req:1000 goldenCarrot
 		icon:icons[0,1] icons[0,4]
- 
+	
 	*fortressAchiev
 		name:Freedom!
 		desc:Complete building the <b>freedom fortress</b>.<//>This is it. You beat the game!
