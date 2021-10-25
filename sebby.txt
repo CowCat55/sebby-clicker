@@ -154,9 +154,9 @@ Upgrades
 	//food upgrades
 	//inspiration : http://rabbit.org/suggested-vegetables-and-fruits-for-a-rabbit-diet/
  
-	*otherGamingChair
-		name:otherGamingChair
-		desc:Totally not hacking.<//><b>Effect:</b><.>+1 sebby/click
+	*Something
+		name:Something
+		desc:Its something<//><b>Effect:</b><.>+1 sebby/click
 		icon:icons[1,1]
 		cost:100 sebbies
 		passive:increase sebby yield of sebbyButton by 1
